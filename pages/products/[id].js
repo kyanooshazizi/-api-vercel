@@ -13,7 +13,7 @@ const Product = ({ product, comments }) => {
 };
 
 export async function getStaticPaths(context) {
-  const res = await fetch(`process.env/menu`);
+  const res = await fetch(`${process.env.url}/menu`);
   const products = await res.json();
 
   const paths = products.map((product) => ({
